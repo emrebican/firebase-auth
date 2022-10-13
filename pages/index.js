@@ -12,9 +12,10 @@ export default function Home() {
 
       <main className="flex text-center flex-col gap-4 mt-20">
         <h1 className="text-4xl text-blue-600">
-          Hello, welcome to my first firebase authentication project with nextJS
+          Hello, welcome to my very first firebase authentication project with
+          nextJS
         </h1>
-        <p className="text-xl text-blue-100">
+        <p className="text-xl text-gray-800">
           You can take a loot at my{' '}
           <Link href="https://github.com/emrebican">
             <span className="font-bold cursor-pointer">github</span>
