@@ -4,7 +4,7 @@ import { auth } from '../utils/firebase-config';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
 
-const dashboard = () => {
+const Dashboard = () => {
   const [user, loading] = useAuthState(auth);
   const route = useRouter();
 
@@ -57,4 +57,4 @@ const dashboard = () => {
     );
 };
 
-export default dashboard;
+export default Dashboard;

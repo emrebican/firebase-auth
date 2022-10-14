@@ -18,7 +18,7 @@ import { FaFacebookF } from 'react-icons/fa';
 import CreateUser from '../../components/CreateUser';
 import Button from '../../components/Button';
 
-const signin = () => {
+const Signin = () => {
   // Sign in with Google
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
@@ -104,4 +104,4 @@ const signin = () => {
   );
 };
 
-export default signin;
+export default Signin;
