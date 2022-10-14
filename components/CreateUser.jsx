@@ -10,11 +10,11 @@ const CreateUser = () => {
 
   if (error)
     return (
-      <div className="flex flex-col">
+      <div className="flex flex-col justify-center items-center">
         <p>Error: {error.message.substring(9, error.message.indexOf('('))}</p>
         <button
           onClick={() => window.location.reload()}
-          className="text-white text-lg bg-slate-700 rounded-sm py-2 mt-2"
+          className="text-white text-lg bg-slate-700 rounded-sm py-2 mt-2 w-32 border-2 hover:border-2 hover: border-slate-700 hover:bg-transparent hover:text-slate-700 hover:font-semibold"
         >
           Try again
         </button>
@@ -43,7 +43,7 @@ const CreateUser = () => {
           className="border-2 border-stone-400 rounded-sm px-2 py-1"
         />
         <button
-          className="text-white text-lg bg-slate-700 rounded-sm py-2"
+          className="text-white text-lg bg-slate-700 rounded-sm py-2 border-2 hover:border-2 hover: border-slate-700 hover:bg-transparent hover:text-slate-700 hover:font-semibold"
           onClick={() => createUserWithEmailAndPassword(email, password)}
         >
           Register

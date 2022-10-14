@@ -9,7 +9,8 @@ module.exports = {
     domains: [
       'lh3.googleusercontent.com',
       'graph.facebook.com',
-      'cdn-icons-png.flaticon.com'
+      'cdn-icons-png.flaticon.com',
+      'avatars.githubusercontent.com'
     ]
   }
 };

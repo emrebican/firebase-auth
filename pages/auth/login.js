@@ -1,6 +1,7 @@
 import {
   GoogleAuthProvider,
   FacebookAuthProvider,
+  GithubAuthProvider,
   signInWithPopup,
   updateProfile
 } from 'firebase/auth';
@@ -10,7 +11,7 @@ import { auth } from '../../utils/firebase-config';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-import { AiOutlineGoogle } from 'react-icons/ai';
+import { AiOutlineGoogle, AiFillGithub } from 'react-icons/ai';
 import { FaFacebookF } from 'react-icons/fa';
 
 import CreateUser from '../../components/CreateUser';
@@ -19,6 +20,7 @@ const login = () => {
   // Sign in with Google
   const googleProvider = new GoogleAuthProvider();
   const facebookProvider = new FacebookAuthProvider();
+  const githubProvider = new GithubAuthProvider();
   const [user, loading] = useAuthState(auth);
   const route = useRouter();
 
@@ -49,6 +51,17 @@ const login = () => {
     }
   };
 
+  // Sign in with Github
+  const githubLogin = async () => {
+    try {
+      const result = await signInWithPopup(auth, githubProvider);
+
+      route.push('/dashboard');
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
+
   useEffect(() => {
     if (user) route.push('/dashboard');
   }, [user]);
@@ -64,16 +77,23 @@ const login = () => {
       <div className="flex flex-col items-center gap-4">
         <button
           onClick={googleLogin}
-          className="flex items-center gap-2 bg-red-600 text-white p-2 rounded-md hover:shadow-xl shadow-black hover:bg-red-700 text-lg px-4 w-full"
+          className="flex items-center gap-2 bg-red-600 text-white p-2 rounded-sm hover:shadow-xl shadow-black hover:bg-red-700 text-lg px-4 w-full"
         >
           <AiOutlineGoogle /> Sign in with Google
         </button>
         <button
           onClick={facebookLogin}
-          className="flex items-center gap-2 bg-blue-800 text-white p-2 rounded-md hover:shadow-xl shadow-black hover:bg-blue-900 text-lg px-4 w-full"
+          className="flex items-center gap-2 bg-blue-800 text-white p-2 rounded-sm hover:shadow-xl shadow-black hover:bg-blue-900 text-lg px-4 w-full"
         >
           <FaFacebookF />
           Sign in with Facebook
+        </button>
+        <button
+          onClick={githubLogin}
+          className="flex items-center gap-2 bg-gray-800 text-white p-2 rounded-sm hover:shadow-xl shadow-black hover:bg-gray-900 text-lg px-4 w-full"
+        >
+          <AiFillGithub />
+          Sign in with Github
         </button>
       </div>
     </div>
