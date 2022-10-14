@@ -13,14 +13,32 @@ export default function Home() {
       <main className="flex text-center flex-col gap-4 mt-20">
         <h1 className="text-4xl text-blue-600">
           Hello, welcome to my very first firebase authentication project with
-          nextJS
+          NextJS
         </h1>
         <p className="text-xl text-gray-800">
-          You can take a loot at my{' '}
+          You can take a look at my{' '}
           <Link href="https://github.com/emrebican">
             <span className="font-bold cursor-pointer">github</span>
           </Link>{' '}
           projects
+        </p>
+        <p className="text-md text-gray-700">
+          This project made powered by{' '}
+          <span className="font-bold">
+            <Link href="https://nextjs.org/docs/getting-started">NextJS</Link>
+          </span>{' '}
+          &{' '}
+          <span className="font-bold">
+            <Link href="https://firebase.google.com/docs?authuser=0&hl=en">
+              Firebase
+            </Link>
+          </span>{' '}
+          &{' '}
+          <span className="font-bold">
+            <Link href="https://tailwindcss.com/docs/installation">
+              TailwindCss
+            </Link>
+          </span>
         </p>
       </main>
     </div>
