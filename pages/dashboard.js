@@ -11,7 +11,7 @@ const dashboard = () => {
   if (loading)
     return <h1 className="text-xl text-gray-800 text-center">Loading...</h1>;
 
-  if (!user) route.push('/auth/login');
+  if (!user) route.push('/auth/signin');
 
   if (user)
     return (

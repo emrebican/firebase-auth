@@ -23,7 +23,7 @@ const Navbar = () => {
           Loading...
         </button>
       ) : !user ? (
-        <Link href="/auth/login">
+        <Link href="/auth/signin">
           <a className="py-2 px-4 text-lg bg-orange-500 text-white rounded-lg font-medium ml-8 hover:bg-orange-600 hover:shadow-md hover:shadow-gray-400 ease-in duration-100">
             Join now
           </a>

@@ -21,35 +21,36 @@ const CreateUser = () => {
       </div>
     );
 
-  if (loading) return <p>Loading...</p>;
+  if (loading) return <p className="text-2xl text-gray-800">Loading...</p>;
 
-  if (user) return <p>Registered user: {user.email}</p>;
+  if (user)
+    return (
+      <p className="text-2xl text-gray-800">Registered user: {user.email}</p>
+    );
 
   return (
-    <div>
-      <form className="flex flex-col gap-2">
-        <input
-          type="email"
-          placeholder="email..."
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-          className="border-2 border-stone-400 rounded-sm px-2 py-1"
-        />
-        <input
-          type="password"
-          placeholder="password..."
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-          className="border-2 border-stone-400 rounded-sm px-2 py-1"
-        />
-        <button
-          className="text-white text-lg bg-slate-700 rounded-sm py-2 border-2 hover:border-2 hover: border-slate-700 hover:bg-transparent hover:text-slate-700 hover:font-semibold"
-          onClick={() => createUserWithEmailAndPassword(email, password)}
-        >
-          Register
-        </button>
-      </form>
-    </div>
+    <form className="flex flex-col gap-2">
+      <input
+        type="email"
+        placeholder="email..."
+        value={email}
+        onChange={(e) => setEmail(e.target.value)}
+        className="border-2 border-stone-400 rounded-sm px-2 py-1"
+      />
+      <input
+        type="password"
+        placeholder="password..."
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="border-2 border-stone-400 rounded-sm px-2 py-1"
+      />
+      <button
+        className="text-white text-lg bg-slate-700 rounded-sm py-2 border-2 hover:border-2 hover: border-slate-700 hover:bg-transparent hover:text-slate-700 hover:font-semibold"
+        onClick={() => createUserWithEmailAndPassword(email, password)}
+      >
+        Register
+      </button>
+    </form>
   );
 };
 
