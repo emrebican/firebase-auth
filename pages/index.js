@@ -23,7 +23,7 @@ export default function Home() {
           projects
         </p>
         <p className="text-md text-gray-700">
-          This project made powered by{' '}
+          This project powered by{' '}
           <span className="font-bold">
             <Link href="https://nextjs.org/docs/getting-started">NextJS</Link>
           </span>{' '}
