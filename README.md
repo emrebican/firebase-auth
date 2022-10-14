@@ -7,6 +7,13 @@ This is a test application for using firebase with nextJS
 
 [App Link](https://firebase-auth-sepia.vercel.app/)
 
+## This app made with Next.js and include technologies following:
+- NextJS
+- Firebase
+- React-firebase-hooks
+- Tailwindcss
+- React icons
+
 ## Links
 
 [Next.js](https://nextjs.org/)
