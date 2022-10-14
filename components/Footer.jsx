@@ -7,7 +7,7 @@ const Footer = () => {
       <Link href="https://github.com/emrebican">
         <div className="flex items-center justify-center gap-2 cursor-pointer">
           <Image src="/favicon.ico" height={25} width={25} />
-          <span>emrebicangithub</span>
+          <span>emrebican-github</span>
         </div>
       </Link>
     </footer>

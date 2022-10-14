@@ -13,6 +13,8 @@ import { useEffect } from 'react';
 import { AiOutlineGoogle } from 'react-icons/ai';
 import { FaFacebookF } from 'react-icons/fa';
 
+import CreateUser from '../../components/CreateUser';
+
 const login = () => {
   // Sign in with Google
   const googleProvider = new GoogleAuthProvider();
@@ -23,7 +25,7 @@ const login = () => {
   const googleLogin = async () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
-      console.log(result.user);
+
       route.push('/dashboard');
     } catch (error) {
       console.log(error.message);
@@ -41,7 +43,6 @@ const login = () => {
       let photoUrl = result.user.photoURL + '?height=500&access_token=' + token;
       await updateProfile(auth.currentUser, { photoURL: photoUrl });
 
-      console.log(result);
       route.push('/dashboard');
     } catch (error) {
       console.log(error.message);
@@ -55,9 +56,12 @@ const login = () => {
   return (
     <div className="md:w-1/2 shadow-xl p-10 text-gray-700 rounded-md  mx-auto flex flex-col items-center align-center gap-4 bg-white">
       <h2 className="text-xl">Join us Today</h2>
-      <h3 className="text-xl text-center">Sign in with one of the providers</h3>
-
-      <div className="flex flex-col items-center gap-4 mt-10">
+      <h3 className="text-xl text-center mb-2">
+        Sign in with one of the providers
+      </h3>
+      <CreateUser />
+      <p className="text-gray-700 text-sm font-bold">- OR -</p>
+      <div className="flex flex-col items-center gap-4">
         <button
           onClick={googleLogin}
           className="flex items-center gap-2 bg-red-600 text-white p-2 rounded-md hover:shadow-xl shadow-black hover:bg-red-700 text-lg px-4 w-full"

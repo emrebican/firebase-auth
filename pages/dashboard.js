@@ -17,13 +17,18 @@ const dashboard = () => {
     return (
       <div className="mx-10">
         <h1 className="text-2xl text-gray-800 text-center">
-          Welcome to your dashboard <strong> {user.displayName}</strong>
+          Welcome to your dashboard{' '}
+          <strong> {user.displayName ? user.displayName : user.email}</strong>
         </h1>
         <div className="flex flex-col gap-2 text-lg">
           <span>
             Photo:{' '}
             <Image
-              src={user.photoURL}
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+              }
               width={60}
               height={60}
               objectFit="cover"

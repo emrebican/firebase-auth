@@ -6,6 +6,10 @@ const nextConfig = {
 
 module.exports = {
   images: {
-    domains: ['lh3.googleusercontent.com', 'graph.facebook.com']
+    domains: [
+      'lh3.googleusercontent.com',
+      'graph.facebook.com',
+      'cdn-icons-png.flaticon.com'
+    ]
   }
 };

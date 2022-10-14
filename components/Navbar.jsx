@@ -8,7 +8,7 @@ import { SiFirebase } from 'react-icons/si';
 
 const Navbar = () => {
   const [user, loading] = useAuthState(auth);
-  console.log(user);
+
   return (
     <nav className="flex justify-between items-center py-10">
       <Link href="/">
@@ -31,9 +31,15 @@ const Navbar = () => {
       ) : (
         <Link href="/dashboard">
           <div className="flex items-center gap-4 cursor-pointer">
-            <h2 className="text-lg text-gray-700">{user.displayName}</h2>
+            <h2 className="text-lg text-gray-700">
+              {user.displayName ? user.displayName : user.email}
+            </h2>
             <Image
-              src={user.photoURL}
+              src={
+                user.photoURL
+                  ? user.photoURL
+                  : 'https://cdn-icons-png.flaticon.com/512/149/149071.png'
+              }
               width={50}
               height={50}
               objectFit="cover"
